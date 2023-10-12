@@ -1,0 +1,24 @@
+/* styles.css */
+
+/* Estilo básico do tooltip */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-message {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1;
+  }
+  
+  /* Exibir o tooltip quando o mouse passa pelo elemento de gatilho */
+  .tooltip-container:hover .tooltip-message {
+    display: block;
+  }
+  
