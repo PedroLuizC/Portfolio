@@ -1,0 +1,304 @@
+<!-- 
+ARQUIVO: index.html
+ATUALIZAÇÃO: Inserção dos caminhos reais das imagens (.jpeg) e ajuste de títulos.
+ESTRUTURA DE IMAGENS ESPERADA (Dentro de assets/img/):
+  - ATA.jpeg
+  - fotoPeter.jpeg
+  - geradorDefuncao.jpeg
+  - GeradorEFrequen.jpeg
+  - OndaSenoidalPeloCelular.jpeg
+  - receptor&transmissor.jpeg
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Luiz | Engenheiro da Computação</title>
+    
+    <!-- Metatags SEO -->
+    <meta name="description" content="Portfólio de Pedro Luiz Cavalcante, Engenheiro da Computação especialista em Microcontroladores, IoT e Full Stack.">
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="newspaper-container">
+        
+        <!-- HEADER META -->
+        <div class="meta-header">
+            <span id="current-date">Carregando data...</span>
+            <span>Edição Portfolio nº 2</span>
+            <span>Recife - PE, Brasil</span>
+        </div>
+
+        <!-- MASTHEAD -->
+        <header class="masthead">
+            <h1>Pedro L. Cavalcante</h1>
+            <p>Engenheiro da Computação & Desenvolvedor Full Stack</p>
+        </header>
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li><a href="#micro">Microcontroladores e IoT</a></li>
+                <li><a href="#fullstack">Full-Stack</a></li>
+                <li><a href="#skills">Competências</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO SECTION (Manchete e Foto Principal) -->
+        <section class="hero">
+            <div class="hero-text">
+                <!-- Título atualizado para refletir o momento -->
+                <h2>A Evolução de um Engenheiro: 5 Anos de Jornada</h2>
+                
+                <div class="lead">
+                    Com bagagem técnica consolidada, Pedro Luiz apresenta nova fase profissional focada em Full Stack, IoT e Inteligência Artificial.
+                </div>
+                
+                <p>
+                    <strong>RECIFE —</strong> Após cinco anos de experiência acumulada, atualizo este portfólio para refletir a amplitude dos conhecimentos adquiridos. Mais experiente e com visão estratégica, decidi adotar esta temática editorial para narrar minha trajetória de forma clara e organizada.
+                    <br><br>
+                    <br><br>
+                    Agora, atuando como um verdadeiro Engenheiro, meu objetivo é me consolidar no mercado desenvolvendo soluções complexas. Meu foco está na tríade que move a inovação atual: a versatilidade de <strong>Projetos Full Stack</strong>, a precisão dos <strong>Microcontroladores em Sistemas Embarcados</strong> e o potencial transformador da <strong>Inteligência Artificial</strong>.
+                </p>
+            </div>
+            <div>
+                <div class="hero-img">
+                    <!-- FOTO DE PERFIL -->
+                    <img src="assets/img/fotoPeter.jpeg" alt="Pedro Luiz Cavalcante" onerror="this.src='https://via.placeholder.com/400x500/333/fff?text=FOTO+DO+PEDRO'">
+                </div>
+                <div class="photo-caption">Pedro Luiz: Engenharia, IoT e Inovação.</div>
+            </div>
+        </section>
+        <!-- SIDEBAR ESQUERDA -->
+        <aside class="sidebar-left" id="contato">
+            <div class="news-item">
+                <h3 class="sidebar-title">Contato</h3>
+                <p><strong>Email:</strong> pedrolcavalcante...gmail.com</p>
+                <p><strong>Tel:</strong> (81) 99711-6881</p>
+                <div style="margin-top: 15px;">
+                    <a href="https:www.linkedin.com/in/pedro-luiz-cavalcante-541475212" target="_blank" class="btn-newspaper">LinkedIn</a>
+                    <a href="https://github.com/PedroLuizC" target="_blank" class="btn-newspaper">GitHub</a>
+                </div>
+            </div>
+
+            <div class="news-item" id="skills">
+                <h3 class="sidebar-title">Hard Skills</h3>
+                <ul class="simple-list">
+                    <li>Java / Spring Boot <span>Média</span></li>
+                    <li>C++ / Arduino / ESP <span>Média</span></li>
+                    <li>Python / Django <span>Média</span></li>
+                    <li>HTML5 / CSS3 <span>Média</span></li>
+                    <li>Excel <span>Intermediário</span></li> <!-- ADICIONADO -->
+                    <li>Eletrônica Digital <span>Média</span></li>
+                    <li>Protocolos IoT <span>Média</span></li>
+                    <li>SQL / Banco de Dados <span>Média</span></li>
+                </ul>
+            </div>
+            
+             <div class="news-item">
+                <h3 class="sidebar-title">Idiomas</h3>
+                <ul class="simple-list">
+                    <li>Português <span>Nativo</span></li>
+                    <li>Inglês <span>Intermediário (MET)</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <!-- SEÇÃO: MICROCONTROLADORES E IOT -->
+            <div id="micro">
+                <h2 class="section-header">Microcontroladores e IoT</h2>
+
+                <!-- PROJETO 1: ATA ELETRÔNICA -->
+                <article class="news-item">
+                    <span class="category-tag">IoT / Automação</span>
+                    <h3>ATA Eletrônica: O Fim das Listas de Chamada em Papel</h3>
+                    <p>
+                        Um sistema embarcado desenvolvido para modernizar e automatizar o registro de frequência acadêmica. O dispositivo opera através de uma Máquina de Estados Finitos (FSM) robusta, garantindo segurança e agilidade.
+                    </p>
+                    
+                    <!-- FOTO ATA ATUALIZADA -->
+                    <img src="assets/img/ATA.jpeg" alt="Protótipo da ATA Eletrônica" class="article-img">
+                    
+                    <p>
+                        <strong>Funcionamento:</strong> O professor autentica-se e configura a sessão. O aluno digita sua matrícula, o sistema valida no banco local e confirma a presença visualmente. Ao final, o ESP32 compila os dados e envia um relatório .CSV formatado automaticamente por e-mail via Wi-Fi.
+                    </p>
+                    <div class="tech-specs">
+                        <strong>Hardware & Tech:</strong>
+                        ESP32 DevKit V1, Teclado 4x4, LCD 16x2 I2C, LittleFS (Flash), SMTP/SSL (Email).
+                    </div>
+                </article>
+
+                <!-- PROJETO 2: TELEMETRIA -->
+                <article class="news-item">
+                    <span class="category-tag">Wireless / Segurança</span>
+                    <h3>Telemetria Segura com Redundância e Correção de Erros</h3>
+                    <p>
+                        Implementação de um sistema de transmissão sem fio de alta confiabilidade entre Arduino e ESP32. O foco deste projeto foi a integridade dos dados em ambientes ruidosos.
+                    </p>
+
+                    <!-- FOTO TELEMETRIA ATUALIZADA -->
+                    <img src="assets/img/receptor-transmissor.jpeg" alt="Sistema de Telemetria (Transmissor e Receptor)" class="article-img">
+
+                    <p>
+                        Utilizando módulos NRF24L01+, implementei algoritmos de <strong>Hamming Code</strong> para correção automática de erros de bit. O protocolo customizado inclui handshake, verificação de "Magic Byte" e modos de economia de energia. O sistema conta ainda com simulação de "Jamming" para testes de stress e logs automáticos enviados periodicamente por e-mail.
+                    </p>
+                    <div class="tech-specs">
+                        <strong>Hardware & Tech:</strong>
+                        Arduino Uno (Tx), ESP32 (Rx), NRF24L01+, Sensor LDR, Algoritmo Hamming(15,11), Log em Flash.
+                    </div>
+                </article>
+
+                <!-- PROJETO 3: INSTRUMENTAÇÃO -->
+                <article class="news-item">
+                    <span class="category-tag">Instrumentação</span>
+                    <h3>Lab Digital: Gerador de Funções, Frequencímetro e Analisador</h3>
+                    <p>
+                        Conjunto de ferramentas de bancada desenvolvidas do zero, integrando múltiplas plataformas de hardware para análise de sinais.
+                    </p>
+                    
+                    <!-- GALERIA (3 FOTOS ATUALIZADAS) -->
+                    <div class="gallery-grid">
+                        <img src="assets/img/GeradorEFrequen.jpeg" alt="Gerador e Frequencímetro">
+                        <img src="assets/img/geradorDefuncao.jpeg" alt="Detalhe Gerador de Função">
+                        <img src="assets/img/onda.png" alt="Análise de Onda via Celular">
+                    </div>
+                    
+                    <p>
+                        O projeto utiliza Raspberry Pi Pico, Arduino e ESP32 em conjunto com interfaces móveis (celular) para visualização de ondas e espectro de frequência, substituindo equipamentos caros por soluções acessíveis e programáveis.
+                    </p>
+                </article>
+            </div>
+
+            <!-- SEÇÃO: FULL STACK / WEB -->
+            <div id="fullstack">
+                <h2 class="section-header">Web Development & Liderança</h2>
+                
+                <!-- PROJETO 1: ROTA-S AI (TCC/COMPLEXIDADE) -->
+                <article class="news-item">
+                    <span class="category-tag">SaaS / Microsserviços</span>
+                    <h3>Rota-S AI: Otimização Logística Urbana</h3>
+                    <p>
+                        Projeto de TCC focado na resolução do complexo "Problema do Caixeiro Viajante" (TSP). Trata-se de uma aplicação Full Stack que substitui o planejamento manual por rotas inteligentes, utilizando algoritmos híbridos de otimização.
+                    </p>
+
+                    <!-- FOTO ROTA-S -->
+                    <img src="assets/img/PainelGestorRostasAI.png" alt="Painel do Rota-S AI" class="article-img">
+
+                    <p>
+                        <strong>Destaques da Arquitetura:</strong> O sistema opera sobre uma infraestrutura de microsserviços containerizados, integrando um Motor de Roteamento Próprio (OSRM) e banco de dados espacial para máxima precisão geográfica.
+                    </p>
+                    <div class="tech-specs">
+                        <strong>Stack:</strong>
+                        React, TypeScript, Python (FastAPI), Docker, PostgreSQL (PostGIS), Nginx.
+                    </div>
+                </article>
+
+                <!-- PROJETO 2: FLOR DA CIDADE (SOFT SKILLS/CLIENTE REAL) -->
+                <article class="news-item">
+                    <span class="category-tag">Front-End / Scrum Master</span>
+                    <h3>Flor da Cidade: Tecnologia Social para a SEAU</h3>
+                    <p>
+                        Atuação estratégica em projeto com cliente real (SEAU). O sistema gerencia hortas comunitárias e inscrições em cursos. Atuei de forma híbrida: liderando a equipe como <strong>Scrum Master</strong>, onde os ajudei em configurar o ambiente e correções de código. Além disso, codificando o Painel Administrativo como <strong>Front-end</strong>.
+                    </p>
+
+                    <!-- FOTO FLOR DA CIDADE -->
+                    <img src="assets/img/webAdmin.png" alt="Painel Administrativo Flor da Cidade" class="article-img">
+
+                    <div class="tech-specs">
+                        <strong>Competências:</strong>
+                        Scrum, Front-end Web, Git Flow, Liderança Técnica.
+                    </div>
+                </article>
+
+                <!-- PROJETO 3: BACK-END (BASE TÉCNICA) -->
+                <article class="news-item">
+                    <span class="category-tag">Back-End / API</span>
+                    <h3>API RESTful com Java Spring Boot</h3>
+                    <p>Arquitetura escalável focada em segurança com Spring Security e persistência de dados com MySQL e Hibernate.</p>
+                </article>
+            </div>
+
+        </main>
+
+        <!-- SIDEBAR DIREITA -->
+        <aside class="sidebar-right" id="formacao">
+            <div class="news-item">
+                <h3 class="sidebar-title">Formação</h3>
+                <h3>Engenharia da Computação</h3>
+                <small style="color:#666; display:block; margin-bottom:5px;">UNINASSAU (Dez/2025)</small>
+                <p>Bacharelado concluído com foco em sistemas embarcados e engenharia de software.</p>
+            </div>
+
+            <div class="news-item">
+                <h3 class="sidebar-title">Certificações</h3>
+                <ul class="simple-list">
+                    <li>
+                        <div>
+                            <strong>Imersão Cloud DevOps</strong>
+                            <br><span style="font-size:0.8rem; color:#666;">Alura (07/25)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Java e Spring Boot</strong>
+                            <br><span style="font-size:0.8rem; color:#666;">Alura (Cursando)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <!-- ADICIONADO EXCEL -->
+                            <strong>Praticando Excel</strong>
+                            <br><span style="font-size:0.8rem; color:#666;">Formação Livre (07/25)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Prog. Internacional</strong>
+                            <br><span style="font-size:0.8rem; color:#666;">Desenv. Pessoal (06/21)</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="news-item">
+                <h3 class="sidebar-title">Destaque</h3>
+                <p><strong>Medalhista OBA</strong><br>
+                22ª Olimpíada Brasileira de Astronomia e Astronáutica <span style="font-size:0.85rem; font-weight:bold;">(10/19)</span>.</p> <!-- DATA ADICIONADA -->
+            </div>
+
+            <div class="news-item">
+                <h3 class="sidebar-title">Interesses</h3>
+                <p>Programação, Microcontroladores, IoT e Inteligência Artificial.</p>
+            </div>
+        </aside>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2025 Pedro Luiz Cavalcante. Todos os direitos reservados.</p>
+            <div style="margin-top:10px;">
+                <a href="https://linkedin.com/in/www.linkedin.com/in/pedro-luiz-cavalcante-541475212" target="_blank" style="color:var(--ink-color); margin:0 10px;">LinkedIn</a>
+                <a href="https://github.com/PedroLuizC" target="_blank" style="color:var(--ink-color); margin:0 10px;">GitHub</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
