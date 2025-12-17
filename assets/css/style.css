@@ -1,9 +1,6 @@
 /* 
 ARQUIVO: assets/css/style.css
-ATUALIZAÇÃO: 
-- Remoção do filtro Preto e Branco.
-- Ajuste de tamanho das imagens (médias/pequenas).
-- Melhoria na responsividade mobile.
+VERSÃO: 3.0 (Responsividade Total - Mobile/Tablet/Desktop)
 */
 
 :root {
@@ -12,8 +9,12 @@ ATUALIZAÇÃO:
     --accent-color: #2c3e50;
     --gray-light: #f4f4f4;
     --gray-border: #d4d4d4;
+    
+    /* Fontes */
     --font-headline: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
+
+    /* Bordas e Espaços */
     --border-style: 2px solid var(--ink-color);
     --border-thin: 1px solid var(--gray-border);
     --spacing-sm: 0.5rem;
@@ -26,6 +27,11 @@ ATUALIZAÇÃO:
     box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -41,11 +47,14 @@ body {
 .newspaper-container {
     background-color: var(--paper-bg);
     max-width: 1200px;
+    width: 95%; 
     margin: 0 auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     padding: var(--spacing-lg);
+    
+    /* Grid Desktop Padrão */
     display: grid;
-    grid-template-columns: 260px 1fr 260px;
+    grid-template-columns: 250px 1fr 250px;
     grid-template-areas: 
         "meta meta meta"
         "header header header"
@@ -57,20 +66,20 @@ body {
     border: 1px solid #ccc;
 }
 
-/* --- Header Meta --- */
+/* --- Elementos de Cabeçalho --- */
 .meta-header {
     grid-area: meta;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; 
     border-bottom: var(--border-style);
     padding-bottom: var(--spacing-sm);
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 700;
+    gap: 10px;
 }
 
-/* --- Masthead --- */
 .masthead {
     grid-area: header;
     text-align: center;
@@ -79,19 +88,19 @@ body {
 
 .masthead h1 {
     font-family: var(--font-headline);
-    font-size: 4.5rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 900;
     line-height: 1;
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     margin-bottom: var(--spacing-sm);
     color: var(--ink-color);
 }
 
 .masthead p {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: 300;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     border-top: 1px solid var(--ink-color);
     border-bottom: 1px solid var(--ink-color);
@@ -104,12 +113,10 @@ body {
     grid-area: nav;
     border-bottom: var(--border-style);
     padding: 10px 0;
-    margin-bottom: 20px;
     position: sticky;
     top: 0;
     background-color: var(--paper-bg);
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra leve para destacar sticky */
 }
 
 .nav-list {
@@ -117,7 +124,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 .nav-list li a {
@@ -127,6 +134,7 @@ body {
     text-transform: uppercase;
     font-size: 0.85rem;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-list li a:hover {
@@ -147,58 +155,34 @@ body {
 
 .hero-text h2 {
     font-family: var(--font-headline);
-    font-size: 3rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
 }
 
-.hero-text .lead {
-    font-size: 1.1rem;
-    font-style: italic;
-    margin-bottom: var(--spacing-md);
-    font-weight: 500;
-}
-
 .hero-text p {
     text-align: justify;
-    column-count: 2;
+    column-count: 2; 
     column-gap: var(--spacing-md);
-    margin-bottom: 1rem;
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
+    min-height: 300px; 
     background-color: #f0f0f0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     border: 1px solid var(--ink-color);
-    overflow: hidden;
 }
 
 .hero-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* REMOVIDO: filter: grayscale... */
-    transition: transform 0.5s ease;
 }
 
-.hero-img img:hover {
-    transform: scale(1.02);
-}
-
-.photo-caption {
-    font-size: 0.75rem;
-    text-align: right;
-    margin-top: 5px;
-    font-style: italic;
-    color: #666;
-}
-
-/* --- Layout --- */
+/* --- Colunas Laterais e Principal --- */
 .sidebar-left {
     grid-area: sidebar-left;
     border-right: var(--border-thin);
@@ -215,48 +199,33 @@ body {
     padding-left: var(--spacing-md);
 }
 
-/* --- Componentes --- */
-.section-header {
+/* --- Componentes Gerais --- */
+.section-header, .sidebar-title {
     font-family: var(--font-headline);
-    font-size: 1.8rem;
-    border-top: 4px solid var(--ink-color);
-    border-bottom: 1px solid var(--ink-color);
-    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
-    padding: 10px 0;
+    border-bottom: 2px solid var(--ink-color);
+    margin-bottom: 1rem;
     text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
 }
 
-.sidebar-title {
-    font-family: var(--font-headline);
-    font-size: 1.3rem;
-    border-bottom: 2px solid var(--ink-color);
-    margin-bottom: var(--spacing-md);
-    padding-bottom: 5px;
-    text-transform: uppercase;
+.section-header {
+    font-size: 1.8rem;
+    border-top: 4px solid var(--ink-color);
+    padding: 10px 0;
+    text-align: center;
 }
 
 .news-item {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 2rem;
     border-bottom: 1px dotted #ccc;
-    padding-bottom: var(--spacing-md);
+    padding-bottom: 1.5rem;
 }
 
-.news-item:last-child {
-    border-bottom: none;
-}
+.news-item:last-child { border-bottom: none; }
 
 .news-item h3 {
     font-family: var(--font-headline);
     font-size: 1.4rem;
-    margin-bottom: 10px;
-    line-height: 1.2;
-}
-
-.news-item p {
-    margin-bottom: 10px;
-    text-align: justify;
+    margin-bottom: 0.5rem;
 }
 
 .category-tag {
@@ -270,61 +239,57 @@ body {
     margin-bottom: 8px;
 }
 
-/* --- IMAGENS DOS ARTIGOS --- */
+/* Imagens Responsivas dentro dos Artigos */
 .article-img {
     display: block;
-    width: auto;             /* Largura se adapta à imagem */
-    max-width: 100%;         /* Garante que não estoure a tela no mobile */
-    height: auto;            /* Mantém a proporção original (sem distorcer) */
-    max-height: 500px;       /* Limite de altura para fotos verticais não ficarem gigantes */
-    margin: 20px auto;       /* Centraliza */
-    border: 1px solid #ddd;  /* Borda sutil */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra leve para destacar do papel */
+    width: 100%;
+    max-width: 500px; /* Limite para desktop */
+    height: auto;
+    max-height: 400px;
+    object-fit: contain; /* Ajuste perfeito sem cortes */
+    margin: 15px auto;
+    border: 1px solid #ddd;
+    background: #f9f9f9; /* Fundo cinza caso a imagem seja png transparente */
 }
 
-/* --- GALERIA GRID (Atualizado) --- */
+/* Galeria Responsiva */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Flexível */
+    gap: 10px;
+    margin: 15px 0;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 120px;         /* Quadrados fixos */
-    object-fit: cover;     /* Corta o excesso para manter o quadrado bonito */
+    height: 100px;
+    object-fit: cover;
     border: 1px solid #ccc;
-    /* REMOVIDO: filter: grayscale... */
-    transition: transform 0.3s;
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+.gallery-grid img:hover { transform: scale(1.05); }
 
-/* --- Listas e Detalhes --- */
-.tech-specs {
-    background: var(--gray-light);
-    padding: 10px;
-    border-left: 3px solid var(--ink-color);
-    font-size: 0.85rem;
-    margin-top: 10px;
-}
-
-.tech-specs strong {
-    display: block;
-    margin-bottom: 5px;
+/* Botões e Listas */
+.btn-newspaper {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 8px 16px;
+    border: 1px solid var(--ink-color);
+    color: var(--ink-color);
+    text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-weight: 700;
+    font-size: 0.75rem;
 }
 
-.simple-list {
-    list-style: none;
+.btn-newspaper:hover {
+    background-color: var(--ink-color);
+    color: #fff;
 }
 
+.simple-list { list-style: none; }
 .simple-list li {
     margin-bottom: 8px;
     border-bottom: 1px solid #eee;
@@ -334,44 +299,19 @@ body {
     font-size: 0.9rem;
 }
 
-.simple-list li span {
-    font-weight: 700;
-}
-
-.btn-newspaper {
-    display: inline-block;
-    margin-top: 5px;
-    margin-right: 5px;
-    padding: 8px 16px;
-    border: 1px solid var(--ink-color);
-    color: var(--ink-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.75rem;
-    transition: all 0.2s;
-}
-
-.btn-newspaper:hover {
-    background-color: var(--ink-color);
-    color: #fff;
-}
-
-/* --- Footer --- */
+/* Footer */
 .footer {
     grid-area: footer;
     border-top: 4px double var(--ink-color);
-    padding-top: var(--spacing-md);
+    padding-top: 2rem;
     text-align: center;
-    font-size: 0.9rem;
 }
 
-/* --- RESPONSIVIDADE (MOBILE MELHORADO) --- */
-
-/* Tablet (Telas até 1024px) */
+/* Tablet e Laptops Pequenos (até 1024px) */
 @media (max-width: 1024px) {
     .newspaper-container {
-        grid-template-columns: 1fr 280px;
+        /* Remove sidebar direita do grid */
+        grid-template-columns: 1fr 280px; 
         grid-template-areas: 
             "meta meta"
             "header header"
@@ -380,12 +320,14 @@ body {
             "main sidebar-right"
             "sidebar-left sidebar-left"
             "footer footer";
+        width: 98%;
+        padding: 20px;
     }
-    
+
     .sidebar-left {
         border-right: none;
         border-top: var(--border-style);
-        padding-top: var(--spacing-md);
+        padding-top: 20px;
         padding-right: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -393,96 +335,79 @@ body {
     }
 }
 
-/* Mobile (Telas até 768px) */
+/* Mobile */
 @media (max-width: 768px) {
     body {
-        padding: 0; /* Remove padding externo no mobile */
-        background-color: var(--paper-bg); /* Fundo vira papel total */
+        padding: 0;
+        background-color: var(--paper-bg);
     }
 
     .newspaper-container {
-        padding: 15px;
         display: flex;
         flex-direction: column;
         width: 100%;
         margin: 0;
+        padding: 15px;
         box-shadow: none;
         border: none;
     }
 
+    /* Ajustes de Header */
     .meta-header {
-        flex-direction: column;
+        justify-content: center;
         text-align: center;
-        gap: 5px;
     }
 
     .masthead h1 {
-        font-size: 2.5rem; /* Título menor */
-        line-height: 1;
+        font-size: 2.8rem; 
+    }
+
+    .nav-list {
+        gap: 10px;
+        padding: 5px 0;
     }
     
-    .masthead p {
-        font-size: 0.9rem;
+    .nav-list li a {
         padding: 5px 10px;
+        display: block;
+        background: #eee; 
+        border-radius: 4px;
     }
 
-    /* Navegação Mobile Amigável */
-    .nav-list {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-        padding-bottom: 10px;
-    }
-
+    /* Hero no Mobile */
     .hero {
         grid-template-columns: 1fr;
-        border-bottom: none;
         gap: 20px;
+        border-bottom: none;
     }
-    
-    .hero-text p {
-        column-count: 1; /* Texto em 1 coluna */
-        font-size: 1rem;
-    }
-    
+
     .hero-img {
-        order: -1; /* Imagem sobe */
+        order: -1; 
         height: auto;
-        max-height: 300px; /* Limita altura da foto de perfil no mobile */
-        margin-bottom: 10px;
+        max-height: 350px;
     }
 
-    .sidebar-left {
-        grid-template-columns: 1fr;
-        border-top: var(--border-style);
-        padding-top: 20px;
-    }
-    
-    /* Ajuste da Galeria no Mobile */
-    .gallery-grid {
-        grid-template-columns: 1fr; /* 1 imagem por linha */
-        gap: 10px;
-    }
-    
-    .gallery-grid img {
-        height: auto; /* Altura natural */
-        max-height: 250px;
+    .hero-text p {
+        column-count: 1; 
+        text-align: left; 
     }
 
-    /* Sidebar Direita */
-    .sidebar-right {
+    /* Reset das Sidebars */
+    .sidebar-left, .sidebar-right {
         border: none;
         padding: 0;
-        margin-top: 20px;
+        margin-top: 2rem;
         border-top: var(--border-style);
-        padding-top: 20px;
+        padding-top: 1rem;
+        display: block; 
     }
-    
-    /* Imagens dos Artigos no Mobile */
+
     .article-img {
-        width: 100%;
-        max-width: 100%; /* Aproveita a tela toda no celular */
-        max-height: 300px;
-        margin: 15px 0;
+        max-width: 100%; 
+        height: auto;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
